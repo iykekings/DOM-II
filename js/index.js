@@ -35,9 +35,10 @@ imgTarget.addEventListener('drag', e => {
   e.target.style.border = 'solid #ffc600 5px';
 });
 
-document.addEventListener('drop', e => {});
-
-document.addEventListener('load', e => {});
+// Add load event to header image
+imgTarget.addEventListener('load', e => {
+  alert('Image Loaded💖');
+});
 
 document.addEventListener('focus', e => {});
 
