@@ -25,9 +25,15 @@ document.addEventListener('keydown', e => {
   }, 1000);
 });
 
-document.addEventListener('wheel', e => {});
+document.addEventListener('wheel', e => {
+  // console.log(e);
+});
 
-document.addEventListener('drag', e => {});
+// Add custom border to header image on drag
+const imgTarget = document.querySelector('.home .intro img');
+imgTarget.addEventListener('drag', e => {
+  e.target.style.border = 'solid #ffc600 5px';
+});
 
 document.addEventListener('drop', e => {});
 
