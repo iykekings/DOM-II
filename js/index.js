@@ -40,7 +40,10 @@ imgTarget.addEventListener('load', e => {
   alert('Image Loaded💖');
 });
 
-document.addEventListener('focus', e => {});
+// Make input width grow on focus
+document.querySelector('footer input').addEventListener('focus', e => {
+  e.target.style.width = '50%';
+});
 
 document.addEventListener('resize', e => {});
 
