@@ -11,7 +11,19 @@ navItems.forEach(item =>
   })
 );
 
-document.addEventListener('keydown', e => {});
+// Display Pressed key on the page
+document.addEventListener('keydown', e => {
+  const float = document.getElementById('floating');
+  float.textContent = e.code;
+  float.style.display = 'block';
+  float.style.color = '#ff7ca9';
+  float.style.border = '3px solid #ff7ca9';
+  setTimeout(() => {
+    float.style.color = 'white';
+    float.style.border = 'unset';
+    float.style.display = 'none';
+  }, 1000);
+});
 
 document.addEventListener('wheel', e => {});
 
