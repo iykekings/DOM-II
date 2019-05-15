@@ -48,7 +48,7 @@ document.querySelector('footer input').addEventListener('focus', e => {
 // Show window size on resize
 window.addEventListener('resize', e => {
   const float = document.querySelector('.floating.top-right');
-  float.textContent = `${window.innerWidth}px`;
+  float.textContent = `Width: ${window.innerWidth}px`;
   float.style.display = 'block';
   float.style.color = '#33cc33';
   float.style.border = '3px solid #33cc33';
@@ -59,8 +59,24 @@ window.addEventListener('resize', e => {
   }, 1000);
 });
 
-document.addEventListener('scroll', e => {});
+// Show scroll position on scroll
+document.addEventListener('scroll', e => {
+  const float = document.querySelector('.floating.top-right');
+  float.textContent = `Scrolled position: ${window.scrollY}px`;
+  float.style.display = 'block';
+  float.style.color = '#ffc600';
+  float.style.border = '3px solid #ffc600';
+  setTimeout(() => {
+    float.style.color = 'white';
+    float.style.border = 'unset';
+    float.style.display = 'none';
+  }, 1000);
+});
 
-document.addEventListener('select', e => {});
+document.querySelectorAll('p').forEach(p =>
+  p.addEventListener('select', e => {
+    console.log(e);
+  })
+);
 
 document.addEventListener('dblclick', e => {});
