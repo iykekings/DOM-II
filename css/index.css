@@ -360,13 +360,19 @@ img {
   background: #FFFFFF;
   color: #17A2B8;
 }
-#floating {
+.floating {
   position: FIXED;
   width: max-content;
   font-size: 2rem;
   padding: 1rem;
   background-color: #2a2a2a;
   display: none;
+}
+.floating.bottom-left {
   bottom: 10%;
   left: 5%;
+}
+.floating.top-right {
+  top: 10%;
+  right: 5%;
 }

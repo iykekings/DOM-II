@@ -13,7 +13,7 @@ navItems.forEach(item =>
 
 // Display Pressed key on the page
 document.addEventListener('keydown', e => {
-  const float = document.getElementById('floating');
+  const float = document.querySelector('.floating.bottom-left');
   float.textContent = e.code;
   float.style.display = 'block';
   float.style.color = '#ff7ca9';
@@ -45,7 +45,19 @@ document.querySelector('footer input').addEventListener('focus', e => {
   e.target.style.width = '50%';
 });
 
-document.addEventListener('resize', e => {});
+// Show window size on resize
+window.addEventListener('resize', e => {
+  const float = document.querySelector('.floating.top-right');
+  float.textContent = `${window.innerWidth}px`;
+  float.style.display = 'block';
+  float.style.color = '#33cc33';
+  float.style.border = '3px solid #33cc33';
+  setTimeout(() => {
+    float.style.color = 'white';
+    float.style.border = 'unset';
+    float.style.display = 'none';
+  }, 1000);
+});
 
 document.addEventListener('scroll', e => {});
 
