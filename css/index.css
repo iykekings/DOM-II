@@ -215,16 +215,27 @@ img {
   color: #212529;
   text-decoration: none;
 }
+.main-navigation .nav-container .nav a.hovered {
+  color: #f83556;
+  border-bottom: 2px solid #2a2a2a;
+}
 .footer {
   width: 100%;
   border-top: 2px dashed #C0C0C0;
   background: #FFEBCD;
+  text-align: center;
 }
 .footer p {
   text-align: center;
   color: #212529;
   font-size: 1.6rem;
   padding: 20px;
+}
+.footer input {
+  padding: 1rem;
+  font-size: 1.5rem;
+  margin: 0.5rem;
+  border-radius: 10px;
 }
 .home .intro {
   padding: 90px 0 10px;
@@ -349,4 +360,20 @@ img {
 .home .content-pick .destination .btn:hover {
   background: #FFFFFF;
   color: #17A2B8;
+}
+.floating {
+  position: FIXED;
+  width: max-content;
+  font-size: 2rem;
+  padding: 1rem;
+  background-color: #2a2a2a;
+  display: none;
+}
+.floating.bottom-left {
+  bottom: 10%;
+  left: 5%;
+}
+.floating.top-right {
+  top: 10%;
+  right: 5%;
 }
