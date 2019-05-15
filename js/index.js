@@ -55,7 +55,10 @@ document.querySelector('footer input').addEventListener('select', e => {
   alert(`You selected ${selection}`);
 });
 
-document.addEventListener('dblclick', e => {});
+// grow the logo by 1.5 its size when dbclicked
+document.querySelector('h1.logo-heading').addEventListener('dblclick', e => {
+  e.target.style.fontSize = `${4 * 1.5}rem`;
+});
 
 function popup(selector, textSource, color) {
   const float = document.querySelector(selector);
