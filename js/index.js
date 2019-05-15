@@ -60,6 +60,7 @@ document.querySelector('h1.logo-heading').addEventListener('dblclick', e => {
   e.target.style.fontSize = `${4 * 1.5}rem`;
 });
 
+// Custom event callback
 function popup(selector, textSource, color) {
   const float = document.querySelector(selector);
   float.textContent = textSource;
