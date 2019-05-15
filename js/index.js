@@ -46,14 +46,14 @@ document.addEventListener('scroll', e => {
   popup('.floating.top-right', `Scroll Position: ${window.scrollY}`, '#ffc600');
 });
 
-document.querySelectorAll('p').forEach(p =>
-  p.addEventListener('select', e => {
-    const selection = event.target.value.substring(
-      event.target.selectionStart,
-      event.target.selectionEnd
-    );
-  })
-);
+// Add select event to footer input field
+document.querySelector('footer input').addEventListener('select', e => {
+  const selection = e.target.value.substring(
+    event.target.selectionStart,
+    event.target.selectionEnd
+  );
+  alert(`You selected ${selection}`);
+});
 
 document.addEventListener('dblclick', e => {});
 
