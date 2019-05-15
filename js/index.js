@@ -13,20 +13,11 @@ navItems.forEach(item =>
 
 // Display Pressed key on the page
 document.addEventListener('keydown', e => {
-  const float = document.querySelector('.floating.bottom-left');
-  float.textContent = e.code;
-  float.style.display = 'block';
-  float.style.color = '#ff7ca9';
-  float.style.border = '3px solid #ff7ca9';
-  setTimeout(() => {
-    float.style.color = 'white';
-    float.style.border = 'unset';
-    float.style.display = 'none';
-  }, 1000);
+  popup('.floating.bottom-left', e.code, '#ff7ca9');
 });
 
 document.addEventListener('wheel', e => {
-  // console.log(e);
+  popup('.floating.bottom-left', `DeltaY: ${e.deltaY}`, '#33cc33');
 });
 
 // Add custom border to header image on drag
@@ -47,36 +38,34 @@ document.querySelector('footer input').addEventListener('focus', e => {
 
 // Show window size on resize
 window.addEventListener('resize', e => {
-  const float = document.querySelector('.floating.top-right');
-  float.textContent = `Width: ${window.innerWidth}px`;
-  float.style.display = 'block';
-  float.style.color = '#33cc33';
-  float.style.border = '3px solid #33cc33';
-  setTimeout(() => {
-    float.style.color = 'white';
-    float.style.border = 'unset';
-    float.style.display = 'none';
-  }, 1000);
+  popup('.floating.top-right', `Width: ${window.innerWidth}px`, '#33cc33');
 });
 
 // Show scroll position on scroll
 document.addEventListener('scroll', e => {
-  const float = document.querySelector('.floating.top-right');
-  float.textContent = `Scrolled position: ${window.scrollY}px`;
+  popup('.floating.top-right', `Scroll Position: ${window.scrollY}`, '#ffc600');
+});
+
+document.querySelectorAll('p').forEach(p =>
+  p.addEventListener('select', e => {
+    const selection = event.target.value.substring(
+      event.target.selectionStart,
+      event.target.selectionEnd
+    );
+  })
+);
+
+document.addEventListener('dblclick', e => {});
+
+function popup(selector, textSource, color) {
+  const float = document.querySelector(selector);
+  float.textContent = textSource;
   float.style.display = 'block';
-  float.style.color = '#ffc600';
-  float.style.border = '3px solid #ffc600';
+  float.style.color = color;
+  float.style.border = `3px solid ${color}`;
   setTimeout(() => {
     float.style.color = 'white';
     float.style.border = 'unset';
     float.style.display = 'none';
   }, 1000);
-});
-
-document.querySelectorAll('p').forEach(p =>
-  p.addEventListener('select', e => {
-    console.log(e);
-  })
-);
-
-document.addEventListener('dblclick', e => {});
+}
